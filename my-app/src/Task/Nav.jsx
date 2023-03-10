@@ -8,9 +8,12 @@ import {
 import Restaurant from './Restaurant';
 import Images from './Images';
 import Invitation from './Invitation';
+import Counter from './Counter';
+import API from './API';
+import LogIn from './form/LogIn';
 
 function Nav(props) {
-    const navLinks = { '/': 'Home', '/restaurantmenu': 'Restaurant', '/images': 'Images', '/invitation': 'Invitation' }
+    const navLinks = { '/': 'Home', '/restaurantmenu': 'Restaurant', '/images': 'Images', '/invitation': 'Invitation', './counter': 'Counter', './api': 'API', './login': 'LogIn' }
     const callnavLinks = Object.entries(navLinks).map((res, i) => {
         return <li className="nav-item" key={i}>
             <Link className="nav-link" to={res[0]}>{res[1]}</Link>
@@ -36,6 +39,9 @@ function Nav(props) {
                     <Route path='/restaurantmenu' element={<Restaurant />} />
                     <Route path='/images' element={<Images />} />
                     <Route path='/invitation' element={<Invitation />} />
+                    <Route path='/counter' element={<Counter />} />
+                    <Route path='/api' element={<API />} />
+                    <Route path='/login' element={<LogIn />} />
                 </Routes>
             </Router>
         </>
